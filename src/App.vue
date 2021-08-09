@@ -14,7 +14,7 @@
               <q-icon name="home" />
             </q-item-section>
 
-            <q-item-section> HOME </q-item-section>
+            <q-item-section> HOME...... </q-item-section>
           </q-item>
         </router-link>
 
