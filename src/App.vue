@@ -28,7 +28,7 @@
                   <q-icon name="home" />
                 </q-item-section>
 
-                <q-item-section> HOME </q-item-section>
+                <q-item-section>HOME</q-item-section>
               </q-item>
             </router-link>
 
@@ -38,7 +38,7 @@
                   <q-icon name="groups" />
                 </q-item-section>
 
-                <q-item-section> ABOUT US </q-item-section>
+                <q-item-section>ABOUT US</q-item-section>
               </q-item>
             </router-link>
           </q-list>
