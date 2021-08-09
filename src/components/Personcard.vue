@@ -1,11 +1,10 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md">
     <q-card class="my-card" >
-      <img src="https://cdn.quasar.dev/img/mountains.jpg">
+      <img src="{{data.picture}}">
 
       <q-card-section>
-        <div class="text-h6">Name: </div>
-        <div class="text-subtitle2"><i class="fas fa-syringe"></i>  Status: first dose</div>
+        <div class="text-h6">Name: {{ data.name }} </div>
       </q-card-section>
     </q-card>
   </div>
@@ -26,5 +25,11 @@ text-align: center;
 <script>
 export default {
   name: "Personcard",
-};
+  props: {
+  	data: {
+   		type: Object,
+    	required: true
+      }
+   }
+}
 </script>
