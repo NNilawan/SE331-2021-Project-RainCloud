@@ -14,7 +14,17 @@
               <q-icon name="home" />
             </q-item-section>
 
-            <q-item-section> HOME...... </q-item-section>
+            <q-item-section> HOME </q-item-section>
+          </q-item>
+        </router-link>
+
+        <router-link :to="{ name: 'PersonList' }">
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon name="groups" />
+            </q-item-section>
+
+            <q-item-section> Person List </q-item-section>
           </q-item>
         </router-link>
 
