@@ -1,30 +1,67 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <q-layout view="hHh Lpr lff" class="shadow-2 rounded-borders content">
+    <q-drawer
+      class="sidebar"
+      v-model="drawer"
+      show-if-above
+      :width="200"
+      :breakpoint="500"
+    >
+      <q-list padding class="menu-list">
+        <router-link :to="{ name: 'Home' }">
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon name="home" />
+            </q-item-section>
+
+            <q-item-section> HOME </q-item-section>
+          </q-item>
+        </router-link>
+
+        <router-link :to="{ name: 'About' }">
+          <q-item active clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon name="groups" />
+            </q-item-section>
+
+            <q-item-section> ABOUT US </q-item-section>
+          </q-item>
+        </router-link>
+      </q-list>
+    </q-drawer>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+  </q-layout>
 </template>
 
+<script>
+import { ref } from "vue";
+
+export default {
+  setup() {
+    return {
+      drawer: ref(false),
+    };
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.content {
+  background-color: #eeffea;
+  font-family: "DB Adman X";
 }
-
-#nav {
-  padding: 30px;
+.sidebar {
+  background-color: #2c6975;
+  font-size: 23px;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+a {
+  text-decoration: none;
+  color: #fefbea;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.menu-list .q-item {
+  border-radius: 0 32px 32px 0;
 }
 </style>
