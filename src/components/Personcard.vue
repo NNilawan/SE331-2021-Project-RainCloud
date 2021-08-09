@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md">
     <q-card class="my-card" >
-      <img src="{{data.picture}}">
+      <img v-bind:src=data.picture>
 
       <q-card-section>
         <div class="text-h6">Name: {{ data.name }} </div>
