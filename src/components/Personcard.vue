@@ -5,7 +5,7 @@
 
       <q-card-section>
         <div class="text-h6">Name: </div>
-        <div class="text-subtitle2">Status: first dose</div>
+        <div class="text-subtitle2"><i class="fas fa-syringe"></i>  Status: first dose</div>
       </q-card-section>
     </q-card>
   </div>
