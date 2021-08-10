@@ -22,7 +22,7 @@
           "
         >
           <q-list padding>
-            <router-link :to="{ name: 'Home' }">
+            <router-link :to="{ name: 'PersonList' }">
               <q-item clickable v-ripple>
                 <q-item-section avatar>
                   <q-icon name="home" />
