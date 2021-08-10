@@ -9,3 +9,9 @@
     </h3>
   </div>
 </template>
+
+<style scoped>
+.networkError {
+  text-align: center;
+}
+</style>
