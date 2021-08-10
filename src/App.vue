@@ -1,49 +1,62 @@
 <template>
-  <q-layout view="hHh Lpr lff" class="shadow-2 rounded-borders content">
-    <q-drawer
-      class="sidebar"
-      v-model="drawer"
-      show-if-above
-      :width="200"
-      :breakpoint="500"
-    >
-      <q-list padding class="menu-list">
-        <router-link :to="{ name: 'Home' }">
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="home" />
-            </q-item-section>
+  <div class="q-pa-md content">
+     <q-layout view="lHh Lpr lff">
+      <q-header elevated id="sidebar">
+        <q-toolbar>
+          <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+        </q-toolbar>
+      </q-header>
 
-            <q-item-section> HOME </q-item-section>
-          </q-item>
-        </router-link>
+      <q-drawer
+        id="sidebar"
+        v-model="drawer"
+        show-if-above
+        :width="200"
+        :breakpoint="500"
+      >
+        <q-scroll-area
+          style="
+            height: calc(100% - 150px);
+            margin-top: 150px;
+            border-right: 1px solid #ddd;
+          "
+        >
+          <q-list padding>
+            <router-link :to="{ name: 'PersonList' }">
+              <q-item clickable v-ripple>
+                <q-item-section avatar>
+                  <q-icon name="home" />
+                </q-item-section>
 
-        <router-link :to="{ name: 'PersonList' }">
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="groups" />
-            </q-item-section>
+                <q-item-section>HOME</q-item-section>
+              </q-item>
+            </router-link>
 
-            <q-item-section> Person List </q-item-section>
-          </q-item>
-        </router-link>
+            <router-link :to="{ name: 'About' }">
+              <q-item clickable v-ripple>
+                <q-item-section avatar>
+                  <q-icon name="groups" />
+                </q-item-section>
 
-        <router-link :to="{ name: 'About' }">
-          <q-item active clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="groups" />
-            </q-item-section>
+                <q-item-section>ABOUT US</q-item-section>
+              </q-item>
+            </router-link>
+          </q-list>
+        </q-scroll-area>
 
-            <q-item-section> ABOUT US </q-item-section>
-          </q-item>
-        </router-link>
-      </q-list>
-    </q-drawer>
+        <q-img
+          class="absolute-top"
+          src="./assets/background-sidebar.jpg"
+          style="height: 150px"
+        >
+        </q-img>
+      </q-drawer>
 
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+      <q-page-container>
+        <router-view />
+      </q-page-container>
+    </q-layout>
+  </div>
 </template>
 
 <script>
@@ -60,16 +73,20 @@ export default {
 
 <style>
 .content {
-  background-color: #eeffea;
   font-family: "DB Adman X";
 }
-.sidebar {
+#sidebar {
   background-color: #2c6975;
   font-size: 23px;
 }
-a {
+#sidebar a {
+  font-weight: bold;
+  color: #979797;
   text-decoration: none;
-  color: #fefbea;
+}
+
+#sidebar a.router-link-exact-active {
+  color: #bbffe0;
 }
 .menu-list .q-item {
   border-radius: 0 32px 32px 0;
