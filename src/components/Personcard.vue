@@ -1,5 +1,9 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md">
+    <router-link
+    class="event-link"
+    :to="{ name: 'Details', params: { id: data.id } }"
+  >
     <q-card class="my-card" >
       <img v-bind:src=data.picture>
 
@@ -7,6 +11,7 @@
         <div class="text-h6">Name: {{ data.name }} </div>
       </q-card-section>
     </q-card>
+      </router-link>
   </div>
 </template>
 
