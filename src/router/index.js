@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import PersonList from '../views/PersonList.vue'
 import PersonDetails from '../views/Person/PersonDetails.vue'
+import VaccineDetails from '../views/Person/VaccineDetails.vue'
 
 const routes = [{
     path: '/',
@@ -21,6 +22,12 @@ const routes = [{
   path: "/datas/:id",
   name: "PersonDetails",
   component: PersonDetails,
+  props: true
+},
+{
+  path: '/datas/:id/vaccine-details',
+  name: 'VaccineDetails',
+  component: VaccineDetails,
   props: true
 },
 
