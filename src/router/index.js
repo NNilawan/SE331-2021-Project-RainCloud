@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import PersonList from '../views/PersonList.vue'
 import PersonDetails from '../views/Person/PersonDetails.vue'
 import NProgress from 'nprogress'
+import NotFound from '@/views/NotFound.vue'
+import NetWorkError from '@/views/NetworkError.vue'
 const routes = [{
         path: '/',
         name: 'PersonList',
@@ -23,6 +25,22 @@ const routes = [{
         component: PersonDetails,
         props: true
     },
+    {
+        path: '/404/:resource',
+        name: '404Resource',
+        component: NotFound,
+        props: true
+    },
+    {
+        path: '/:catchAll(.*)',
+        name: 'NotFound',
+        component: NotFound
+    },
+    {
+        path: '/network-error',
+        name: 'NetworkError',
+        component: NetWorkError
+    }
 
 ];
 
