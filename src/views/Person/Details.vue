@@ -13,7 +13,7 @@
           </q-card-section>
           <q-card-section class="text-left">
             <div class="text-h5">STATUS: {{ dose1 }} {{ dose2 }}</div>
-            <div class="text-h5">AGE: {{ event.age }}</div>
+            <div class="text-h5">AGE: {{ event.age }} years</div>
             <div class="text-h6">HOMETOWN: {{ event.hometown }}</div>
           </q-card-section>
         </q-card>
@@ -35,7 +35,7 @@ export default {
     dose1: function () {
       var dose1 = this.event.status_does1;
       if (dose1 === true) {
-        return "Dose1: Get the first dose";
+        return "Already get first dose";
       } else {
         return " ";
       }
@@ -43,9 +43,9 @@ export default {
     dose2: function () {
       var dose2 = this.event.status_does2;
       if (dose2 === true) {
-        return ", Dose2: Get the second dose";
+        return ", Already get second dose";
       } else {
-        return " ";
+        return ", Waiting for second dose";
       }
     },
   },
@@ -72,7 +72,7 @@ export default {
   text-align: center;
 }
 .my-card {
-  max-width: 700px !important;
+  max-width: 600px !important;
   width: 100%;
   max-width: 350px;
 }
