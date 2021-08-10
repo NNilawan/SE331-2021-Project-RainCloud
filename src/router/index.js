@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import PersonList from '../views/PersonList.vue'
-import Details from '../views/Person/Details.vue'
+import PersonDetails from '../views/Person/PersonDetails.vue'
 
 const routes = [{
     path: '/',
@@ -19,8 +19,8 @@ const routes = [{
 },
 {
   path: "/datas/:id",
-  name: "Details",
-  component: Details,
+  name: "PersonDetails",
+  component: PersonDetails,
   props: true
 },
 
