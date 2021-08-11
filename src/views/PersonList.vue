@@ -1,41 +1,103 @@
 <template>
-  <h1>Person List</h1>
   <div class="home">
-
-    <Personcard v-for="data in datas" :key="data.id" :data="data" />
-
+    <h1>PEOPLE LIST</h1>
   </div>
 
+  <div class="row">
+      <Personcard v-for="data in datas" :key="data.id" :data="data" />
+  </div>
 
+  <div class="pagination q-gutter-md">
+    <router-link
+      class="pagination"
+      :to="{ name: 'PersonList', query: { page: page - 1 } }"
+      rel="prev"
+      v-if="page != 1"
+    >
+      <q-btn outline rounded color="primary" label="Prev Page"
+    /></router-link>
 
+    <router-link
+      class="pagination"
+      :to="{ name: 'PersonList', query: { page: page + 1 } }"
+      rel="next"
+      v-if="hasNextPage"
+      ><q-btn outline rounded color="primary" label="Next Page" />
+    </router-link>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Personcard from '@/components/Personcard.vue'
-import PersonService from '@/services/PersonService.js'
+import Personcard from "@/components/Personcard.vue";
+import PersonService from "@/services/PersonService.js";
 export default {
   name: "PersonList",
+  props: {
+    page: {
+      type: Number,
+      required: true,
+    },
+  },
   components: {
     Personcard,
   },
   data() {
     return {
-   datas: null
-    }
+      datas: null,
+      totalPersons: 0, // <--- Added this to store totalPersons
+    };
   },
-  created(){
-     // get events from mock db when component is created
-  // axios
-  // .get('http://localhost:3004/events')
-  PersonService.getPersons()
-  .then((response) => {
-      this.datas = response.data
-      })
-.catch((error) => {
-  console.log(error)
-  })
-  }
 
-}
+  // eslint-disable-next-line no-unused-vars
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    PersonService.getPersons(4, parseInt(routeTo.query.page) || 1)
+      .then((response) => {
+        next((comp) => {
+          comp.datas = response.data;
+          comp.totalPersons = response.headers["x-total-count"];
+        });
+      })
+      .catch(() => {
+        next({ name: "NetworkError" });
+      });
+  },
+  beforeRouteUpdate(routeTo) {
+    PersonService.getPersons(4, parseInt(routeTo.query.page) || 1)
+      .then((response) => {
+        this.datas = response.data; // <-----
+        this.totalPersons = response.headers["x-total-count"];
+      })
+      .catch(() => {
+        return { name: "NetworkError" };
+      });
+  },
+  computed: {
+    hasNextPage() {
+      // First, calculate total pages
+      let totalPages = Math.ceil(this.totalPersons / 4); // 2 is events per page
+
+      // Then check to see if the current page is less than the total pages.
+      return this.page < totalPages;
+    },
+  },
+};
 </script>
+
+<style>
+.home {
+  text-align: center;
+}
+.pagination {
+  text-decoration: none;
+  text-align: center;
+  margin-top: 20px !important;
+}
+
+.block {
+  font-size: 22px;
+}
+.row {
+  justify-content: center;
+}
+</style>
