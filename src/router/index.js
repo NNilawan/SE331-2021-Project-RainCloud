@@ -30,7 +30,7 @@ const routes = [{
       component: PersonDetails,
     },
     {
-      path: '/datas/:id/vaccinedetails',
+      path: '/datas/:id/vaccine-details',
       name: 'VaccineDetails',
       props: true,
       component: VaccineDetails
