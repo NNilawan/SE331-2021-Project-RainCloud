@@ -1,7 +1,24 @@
 <template>
   <div class="detail">
     <h2>DOCTOR RECOMMENDATION</h2>
-    <form class="review-form" @submit.prevent="onSubmit">
+    <div class="review-container">
+      <h3>Recommendation:</h3>
+      <ul>
+        <!-- <DoctorComment
+            v-for="review in reviews.id"
+              :key="review.id" 
+         :id="id"
+        /> -->
+        <DoctorComment
+         :id="id"
+        />
+        <!-- <DoctorComment
+            v-for="(review, id) in reviews" :key="id"/> -->
+                    
+      </ul>
+    </div>
+
+    <form class="review-form" @submit.prevent="onSubmit" >
       <div>
         <label for="name"> Doctor Name: </label>
         <br />
@@ -19,22 +36,39 @@
 
 <script>
 import PersonService from "@/services/PersonService.js";
+import DoctorComment from "@/components/DoctorComment.vue";
 export default {
+     components: {
+   DoctorComment
+ },
   props: ["id"],
+  inject: ["GStore"],
   data() {
     return {
       name: "",
       question: "",
+      reviews: [],
     };
   },
-  computed: {
-    vaccine: function () {
-      var dose2 = this.event.status_does2;
-      if (dose2 === true) {
-        return "Already get second dose";
-      } else {
-        return "Waiting for second dose";
+  methods: {
+    onSubmit() {
+      if (this.name === "" || this.question === "") {
+        alert("Recommend is incomplete. Please fill out every field");
+        return;
       }
+      let doctorRecommmend = {
+        name: this.name,
+        question: this.question,
+      };
+      this.reviews.push(doctorRecommmend);
+      if (this.GStore.comment[this.id] == null) {
+        this.GStore.comment[this.id] = this.reviews;
+      } else {
+        this.GStore.comment[this.id].push(doctorRecommmend);
+      }
+      console.log(this.GStore.comment[this.id])
+      this.name = "";
+      this.question = "";
     },
   },
   created() {
