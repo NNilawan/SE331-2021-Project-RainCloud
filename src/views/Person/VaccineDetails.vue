@@ -4,9 +4,14 @@
     <div v-if="event">
       <div class="q-pa-md flex flex-center">
         <q-card class="vaccine-card">
-          <q-tabs v-model="tab" class="text-teal">
+          <q-tabs
+            v-model="tab"
+            class="text-grey"
+            active-color="secondary"
+            indicator-color="secondary"
+          >
             <q-tab label="FIRST DOSE" name="one" />
-            <q-tab label="SECOND DOSE" name="two" />
+            <q-tab label="SECOND DOSE" name="two" :disable="event.vaccine.length == 1" />
           </q-tabs>
 
           <q-separator />
@@ -75,10 +80,11 @@ export default {
     separateVaccine: function () {
       const length = this.event.vaccine.length;
       const array_slice = this.event.vaccine.slice();
+      let vaccine_dose2 = null;
       for (let i = 1; i <= length; i++) {
-        const vaccine_dose2 = array_slice.slice(1);
-        return vaccine_dose2;
+        vaccine_dose2 = array_slice.slice(1);
       }
+      return vaccine_dose2;
     },
   },
   created() {
