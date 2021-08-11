@@ -4,6 +4,8 @@ import PersonDetails from '../views/Person/PersonDetails.vue'
 import NProgress from 'nprogress'
 import NotFound from '@/views/NotFound.vue'
 import NetWorkError from '@/views/NetworkError.vue'
+import VaccineDetails from '../views/Person/VaccineDetails.vue'
+
 const routes = [{
     path: '/',
     name: 'PersonList',

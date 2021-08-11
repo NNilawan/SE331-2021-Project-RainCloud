@@ -76,17 +76,17 @@ export default {
   font-family: "DB Adman X";
 }
 #sidebar {
-  background-color: #2c6975;
+  background-color:#67b39f  ;
   font-size: 23px;
 }
 #sidebar a {
   font-weight: bold;
-  color: #979797;
+  color: white;
   text-decoration: none;
 }
 
 #sidebar a.router-link-exact-active {
-  color: #bbffe0;
+  color: #2c6975;
 }
 .menu-list .q-item {
   border-radius: 0 32px 32px 0;
