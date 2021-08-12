@@ -9,9 +9,31 @@
         </q-img>
       </q-card-section>
       <q-card-section class="text-left">
-        <div class="text-h5">STATUS: {{ vaccine }}</div>
-        <div class="text-h5">AGE: {{ event.age }} years</div>
-        <div class="text-h6">HOMETOWN: {{ event.hometown }}</div>
+        <div class="text-h6">
+          <span class="title">STATUS:</span> {{ vaccine }}
+        </div>
+        <div class="text-h6">
+          <span class="title">AGE:</span> {{ event.age }} years
+        </div>
+        <div class="text-h6">
+          <span class="title">CONGENITAL DISEAS:</span>
+          {{ event.congenital_disease }}
+        </div>
+        <div class="text-h6">
+          <span class="title">DRUG ALLERGY:</span> {{ event.drug_allergy }}
+        </div>
+        <div class="text-h6">
+          <span class="title">HEIGHT:</span> {{ event.height }} CM.
+        </div>
+        <div class="text-h6">
+          <span class="title">WEIGHT:</span> {{ event.weight }} KG.
+        </div>
+        <div class="text-h6">
+          <span class="title">TEMPERATURE:</span> {{ event.temperature }} °C
+        </div>
+        <div class="text-h6">
+          <span class="title">HOMETOWN:</span> {{ event.hometown }}
+        </div>
       </q-card-section>
     </q-card>
   </div>
@@ -43,6 +65,9 @@ export default {
   max-width: 600px !important;
   width: 100%;
   max-width: 350px;
+}
+.title {
+  font-weight: bold;
 }
 </style>
 
