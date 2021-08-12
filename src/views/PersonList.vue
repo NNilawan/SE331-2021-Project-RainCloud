@@ -14,7 +14,7 @@
       rel="prev"
       v-if="page != 1"
     >
-      <q-btn outline rounded color="primary" label="Prev Page"
+      <q-btn unelevated rounded color="orange" label="Prev Page"
     /></router-link>
 
     <router-link
@@ -22,7 +22,7 @@
       :to="{ name: 'PersonList', query: { page: page + 1 } }"
       rel="next"
       v-if="hasNextPage"
-      ><q-btn outline rounded color="primary" label="Next Page" />
+      ><q-btn unelevated rounded color="orange" label="Next Page" />
     </router-link>
   </div>
 </template>

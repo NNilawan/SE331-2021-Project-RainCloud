@@ -1,60 +1,70 @@
 import { createRouter, createWebHistory } from "vue-router";
 import PersonList from '../views/PersonList.vue'
+import Layout from '../views/Person/Layout.vue'
+import VaccineDetails from '../views/Person/VaccineDetails.vue'
 import PersonDetails from '../views/Person/PersonDetails.vue'
 import VaccineDetails from '../views/Person/VaccineDetails.vue'
 import DoctorDetails from '../views/Person/DoctorDetails.vue'
 import NProgress from 'nprogress'
 import NotFound from '@/views/NotFound.vue'
 import NetWorkError from '@/views/NetworkError.vue'
+
 const routes = [{
-        path: '/',
-        name: 'PersonList',
-        component: PersonList,
-        props: (route) => ({ page: parseInt(route.query.page) || 1 })
+  path: '/',
+  name: 'PersonList',
+  component: PersonList,
+  props: (route) => ({ page: parseInt(route.query.page) || 1 })
+},
+{
+    path: "/about",
+    name: "About",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+        import( /* webpackChunkName: "about" */ "../views/About.vue"),
+},
+{
+  path: "/datas/:id",
+  name: "Layout",
+  props: true,
+  component: Layout,
+  children: [
+    {
+      path: '',
+      name: "PersonDetails",
+      component: PersonDetails,
     },
     {
-        path: "/about",
-        name: "About",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import ( /* webpackChunkName: "about" */ "../views/About.vue"),
-    },
+      path: '/datas/:id/vaccine-details',
+      name: 'VaccineDetails',
+      props: true,
+      component: VaccineDetails
+    },/*
     {
-        path: "/datas/:id",
-        name: "PersonDetails",
-        component: PersonDetails,
-        props: true
-    },
-    {
-        path: '/datas/:id/vaccine-details',
-        name: 'VaccineDetails',
-        component: VaccineDetails,
-        props: true
-    },
-    {
-        path: '/datas/:id/doctor-details',
-        name: 'DoctorDetails',
-        component: DoctorDetails,
-        props: true
-    },
-    {
-        path: '/404/:resource',
-        name: '404Resource',
-        component: NotFound,
-        props: true
-    },
-    {
-        path: '/:catchAll(.*)',
-        name: 'NotFound',
-        component: NotFound
-    },
-    {
-        path: '/network-error',
-        name: 'NetworkError',
-        component: NetWorkError
-    }
+      path: '/datas/:id/doctor-recommendation',
+      name: 'DoctorRecommendation',
+      props: true,
+      component: DoctorRecommendation
+    } */
+  ]
+},
+{
+    path: '/404/:resource',
+    name: '404Resource',
+    component: NotFound,
+    props: true
+},
+{
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
+},
+{
+    path: '/network-error',
+    name: 'NetworkError',
+    component: NetWorkError
+}
 
 ];
 

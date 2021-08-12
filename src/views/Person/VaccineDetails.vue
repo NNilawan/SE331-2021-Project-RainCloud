@@ -1,81 +1,74 @@
 <template>
-  <div class="vaccine-details">
-    <h2>VACCINE DETAILS</h2>
-    <div v-if="event">
-      <div class="q-pa-md flex flex-center">
-        <q-card class="vaccine-card">
-          <q-tabs
-            v-model="tab"
-            class="text-grey"
-            active-color="secondary"
-            indicator-color="secondary"
-          >
-            <q-tab label="FIRST DOSE" name="one" />
-            <q-tab label="SECOND DOSE" name="two" :disable="event.vaccine.length == 1" />
-          </q-tabs>
+  <div class="q-pa-md flex flex-center">
+    <q-card class="vaccine-card">
+      <q-tabs
+        v-model="tab"
+        class="text-grey"
+        active-color="secondary"
+        indicator-color="secondary"
+      >
+        <q-tab label="FIRST DOSE" name="one" />
+        <q-tab
+          label="SECOND DOSE"
+          name="two"
+          :disable="event.vaccine.length == 1"
+        />
+      </q-tabs>
 
-          <q-separator />
+      <q-separator />
 
-          <q-tab-panels v-model="tab" animated id="text-details">
-            <q-tab-panel
-              name="one"
-              v-for="vaccine in event.vaccine"
-              :key="vaccine.id"
-            >
-              <q-card-section class="text-left">
-                <p>
-                  NAME: <span id="text-color">{{ vaccine.name }}</span>
-                </p>
-                <p>
-                  DATE: <span id="text-color">{{ vaccine.date }}</span>
-                </p>
-                <p>
-                  TIME: <span id="text-color">{{ vaccine.time }}</span>
-                </p>
-                <p>
-                  PLACE: <span>{{ vaccine.place }}</span>
-                </p>
-              </q-card-section>
-            </q-tab-panel>
+      <q-tab-panels v-model="tab" animated id="text-details">
+        <q-tab-panel
+          name="one"
+          v-for="vaccine in event.vaccine"
+          :key="vaccine.id"
+        >
+          <q-card-section class="text-left">
+            <p>
+              NAME: <span id="text-color">{{ vaccine.name }}</span>
+            </p>
+            <p>
+              DATE: <span id="text-color">{{ vaccine.date }}</span>
+            </p>
+            <p>
+              TIME: <span id="text-color">{{ vaccine.time }}</span>
+            </p>
+            <p>
+              PLACE: <span>{{ vaccine.place }}</span>
+            </p>
+          </q-card-section>
+        </q-tab-panel>
 
-            <q-tab-panel
-              name="two"
-              v-for="vaccine in separateVaccine"
-              :key="vaccine.id"
-            >
-              <q-card-section class="text-left">
-                <p>
-                  NAME: <span id="text-color">{{ vaccine.name }}</span>
-                </p>
-                <p>
-                  DATE: <span id="text-color">{{ vaccine.date }}</span>
-                </p>
-                <p>
-                  TIME: <span id="text-color">{{ vaccine.time }}</span>
-                </p>
-                <p>
-                  PLACE: <span>{{ vaccine.place }}</span>
-                </p>
-              </q-card-section>
-            </q-tab-panel>
-          </q-tab-panels>
-        </q-card>
-      </div>
-    </div>
+        <q-tab-panel
+          name="two"
+          v-for="vaccine in separateVaccine"
+          :key="vaccine.id"
+        >
+          <q-card-section class="text-left">
+            <p>
+              NAME: <span id="text-color">{{ vaccine.name }}</span>
+            </p>
+            <p>
+              DATE: <span id="text-color">{{ vaccine.date }}</span>
+            </p>
+            <p>
+              TIME: <span id="text-color">{{ vaccine.time }}</span>
+            </p>
+            <p>
+              PLACE: <span>{{ vaccine.place }}</span>
+            </p>
+          </q-card-section>
+        </q-tab-panel>
+      </q-tab-panels>
+    </q-card>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
-import PersonService from "@/services/PersonService.js";
 
 export default {
-  props: ["id"],
-  data() {
-    return {
-      event: null,
-    };
-  },
+  props: ["event"],
   computed: {
     separateVaccine: function () {
       const length = this.event.vaccine.length;
@@ -87,15 +80,6 @@ export default {
       return vaccine_dose2;
     },
   },
-  created() {
-    PersonService.getPerson(this.id)
-      .then((response) => {
-        this.event = response.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  },
   setup() {
     return {
       tab: ref("one"),
@@ -105,9 +89,6 @@ export default {
 </script>
 
 <style>
-.vaccine-details {
-  text-align: center;
-}
 .vaccine-card {
   border-radius: 10px !important;
   width: 100%;

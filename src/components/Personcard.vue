@@ -9,7 +9,9 @@
 
         <q-card-section>
           <div class="text-h4">Name: {{ data.name }} {{ data.surname }}</div>
-          <div class="text-h5">Status: {{ vaccine }}</div>
+          <div class="text-h5">
+            <q-icon name="vaccines" /> Status: {{ vaccine }}
+          </div>
         </q-card-section>
       </q-card>
     </router-link>
@@ -20,9 +22,9 @@
 .my-card {
   width: 100%;
   max-width: 250px;
-  color: white;
-  border-radius: 30px !important;
-  background-color: #68b2a0 !important;
+  border-radius: 10px !important;
+  color: #68b2a0 !important;
+  border-color: #68b2a0 !important;
   text-align: center;
 }
 

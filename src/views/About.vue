@@ -51,7 +51,7 @@
     background-color: #f1fffb !important;
   border-color: #67b39f !important;
   color: #67b39f !important;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 </style>
