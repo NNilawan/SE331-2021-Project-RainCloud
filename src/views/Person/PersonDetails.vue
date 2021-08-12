@@ -1,36 +1,25 @@
 <template>
-  <div class="detail">
-    <h2>PERSONAL DETAILS</h2>
-    <div v-if="event">
-      <div class="q-pa-md row items-start q-gutter-md flex flex-center">
-        <q-card class="my-card">
-          <q-card-section horizontal>
-            <q-img :src="event.picture">
-              <div class="text-h4 absolute-bottom text-right">
-                NAME: {{ event.name }} {{ event.surname }}
-              </div>
-            </q-img>
-          </q-card-section>
-          <q-card-section class="text-left">
-            <div class="text-h5">STATUS: {{ vaccine }}</div>
-            <div class="text-h5">AGE: {{ event.age }} years</div>
-            <div class="text-h6">HOMETOWN: {{ event.hometown }}</div>
-          </q-card-section>
-        </q-card>
-      </div>
-    </div>
+  <div class="q-pa-md row items-start q-gutter-md flex flex-center">
+    <q-card class="my-card">
+      <q-card-section horizontal>
+        <q-img :src="event.picture">
+          <div class="text-h4 absolute-bottom text-right">
+            NAME: {{ event.name }} {{ event.surname }}
+          </div>
+        </q-img>
+      </q-card-section>
+      <q-card-section class="text-left">
+        <div class="text-h5">STATUS: {{ vaccine }}</div>
+        <div class="text-h5">AGE: {{ event.age }} years</div>
+        <div class="text-h6">HOMETOWN: {{ event.hometown }}</div>
+      </q-card-section>
+    </q-card>
   </div>
 </template>
 
 <script>
-import PersonService from "@/services/PersonService.js";
 export default {
-  props: ["id"],
-  data() {
-    return {
-      event: null,
-    };
-  },
+  props: ["event"],
   computed: {
     vaccine: function () {
       var dose2 = this.event.status_does2;
@@ -41,22 +30,6 @@ export default {
       }
     },
   },
-  created() {
-    PersonService.getPerson(this.id)
-      .then((response) => {
-        this.event = response.data;
-      })
-      .catch((error) => {
-        if (error.response && error.response.status == 404) {
-           this.$router.push({
-            name: '404Resource',
-            params: { resource: 'person' }
-          })
-        } else {
-          return { name: "NetworkError" };
-        }
-      });
-  },
 };
 </script>
 
@@ -65,10 +38,6 @@ export default {
 <style>
 .menu {
   margin-top: -50px;
-}
-
-.detail {
-  text-align: center;
 }
 .my-card {
   max-width: 600px !important;
