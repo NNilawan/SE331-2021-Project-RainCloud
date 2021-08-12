@@ -1,10 +1,11 @@
 <template>
   <div class="home">
-    <h2>PEOPLE LIST</h2>
+    <h1 class="title">PEOPLE LIST</h1>
+    <h2 class="subtitle">THE PEOPLE LIST WHO HAVE BEEN VACCINATED</h2>
   </div>
 
   <div class="row">
-      <Personcard v-for="data in datas" :key="data.id" :data="data" />
+    <Personcard v-for="data in datas" :key="data.id" :data="data" />
   </div>
 
   <div class="pagination q-gutter-md">
@@ -51,7 +52,7 @@ export default {
 
   // eslint-disable-next-line no-unused-vars
   beforeRouteEnter(routeTo, routeFrom, next) {
-    PersonService.getPersons(4, parseInt(routeTo.query.page) || 1)
+    PersonService.getPersons(6, parseInt(routeTo.query.page) || 1)
       .then((response) => {
         next((comp) => {
           comp.datas = response.data;
@@ -63,7 +64,7 @@ export default {
       });
   },
   beforeRouteUpdate(routeTo) {
-    PersonService.getPersons(4, parseInt(routeTo.query.page) || 1)
+    PersonService.getPersons(6, parseInt(routeTo.query.page) || 1)
       .then((response) => {
         this.datas = response.data; // <-----
         this.totalPersons = response.headers["x-total-count"];
@@ -75,7 +76,7 @@ export default {
   computed: {
     hasNextPage() {
       // First, calculate total pages
-      let totalPages = Math.ceil(this.totalPersons / 4); // 2 is events per page
+      let totalPages = Math.ceil(this.totalPersons / 6); // 2 is events per page
 
       // Then check to see if the current page is less than the total pages.
       return this.page < totalPages;
@@ -93,7 +94,14 @@ export default {
   text-align: center;
   margin-top: 20px !important;
 }
-
+.title {
+  font-weight: bold;
+}
+.subtitle {
+  margin-top: -40px;
+  font-weight: bold;
+  color: #68b2a0;
+}
 .block {
   font-size: 22px;
 }

@@ -1,7 +1,7 @@
 <template>
   <div v-if="GStore.event">
     <div class="title">
-      <h2>{{ title }}</h2>
+      <h2 class="text-h1">{{ title }}</h2>
       <div class="q-pa-md nav flex flex-center">
         <q-item id="nav-btn" class="q-gutter-md">
           <router-link :to="{ name: 'PersonDetails', params: { id: GStore.event.id  } }">
@@ -78,7 +78,7 @@ export default {
 }
 
 .nav {
-  margin-top: -50px;
+  margin-top: -80px;
 }
 
 #nav-btn {

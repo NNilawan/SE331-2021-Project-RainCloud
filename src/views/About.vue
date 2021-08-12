@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h2>ABOUT US (<span class="group"> RAIN CLOUD</span> )</h2>
+    <h1>ABOUT US (<span class="group"> RAIN CLOUD</span> )</h1>
     <div class="q-pa-md row items-start q-gutter-md flex flex-center">
       <q-card class="card">
         <q-img class="images" src="https://i.ibb.co/4tjMx4R/55.jpg">
