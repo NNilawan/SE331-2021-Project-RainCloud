@@ -22,23 +22,25 @@
         autogrow
       />
       <br />
-       <div class="row">
-          <q-space />
-          <q-btn 
-            type="submit"
-            value="Submit"
-            outline
-            rounded
-            color="teal-7"
-            label="Submit"
-          />
-        </div>
+      <div class="row">
+        <q-space />
+        <q-btn
+          type="submit"
+          value="Submit"
+          outline
+          rounded
+          color="teal-7"
+          label="Submit"
+          @click="flashMessage"
+        />
+      </div>
     </q-card-section>
   </form>
 </template> 
 
 <script>
 export default {
+  inject: ["GStore"],
   data() {
     return {
       name: "",
@@ -63,12 +65,18 @@ export default {
       this.name = "";
       this.question = "";
     },
+    flashMessage() {
+      this.GStore.flashMessage = "You comment already";
+      setTimeout(() => {
+        //After 5 seconds remove it
+        this.GStore.flashMessage = "";
+      }, 5000);
+    },
   },
 };
 </script>
 
 <style>
-
 .textbox {
   border-radius: 10px !important;
   width: 100%;

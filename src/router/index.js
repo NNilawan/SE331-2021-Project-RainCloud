@@ -7,6 +7,8 @@ import DoctorDetails from '../views/Person/DoctorDetails.vue'
 import NProgress from 'nprogress'
 import NotFound from '@/views/NotFound.vue'
 import NetWorkError from '@/views/NetworkError.vue'
+import PersonService from '@/services/PersonService.js'
+import GStore from '@/store'
 
 const routes = [{
   path: '/',
@@ -15,19 +17,35 @@ const routes = [{
   props: (route) => ({ page: parseInt(route.query.page) || 1 })
 },
 {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-        import( /* webpackChunkName: "about" */ "../views/About.vue"),
+  path: "/about",
+  name: "About",
+  // route level code-splitting
+  // this generates a separate chunk (about.[hash].js) for this route
+  // which is lazy-loaded when the route is visited.
+  component: () =>
+    import( /* webpackChunkName: "about" */ "../views/About.vue"),
 },
 {
   path: "/datas/:id",
   name: "Layout",
   props: true,
   component: Layout,
+  beforeEnter: (to) => {
+    return PersonService.getPerson(to.params.id)
+      .then((response) => {
+        GStore.event = response.data // <--- Store the event
+      })
+      .catch((error) => {
+        if (error.response && error.response.status == 404) {
+          return {
+            name: '404Resource',
+            params: { resource: 'person' }
+          }
+        } else {
+          return { name: 'NetworkError' }
+        }
+      })
+  },
   children: [
     {
       path: '',
@@ -49,41 +67,41 @@ const routes = [{
   ]
 },
 {
-    path: '/404/:resource',
-    name: '404Resource',
-    component: NotFound,
-    props: true
+  path: '/404/:resource',
+  name: '404Resource',
+  component: NotFound,
+  props: true
 },
 {
-    path: '/:catchAll(.*)',
-    name: 'NotFound',
-    component: NotFound
+  path: '/:catchAll(.*)',
+  name: 'NotFound',
+  component: NotFound
 },
 {
-    path: '/network-error',
-    name: 'NetworkError',
-    component: NetWorkError
+  path: '/network-error',
+  name: 'NetworkError',
+  component: NetWorkError
 }
 
 ];
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
-    routes,
-    scrollBehavior(to, from, savedPosition) {
-        if (savedPosition) {
-            return savedPosition
-        } else {
-            return { top: 0 }
-        }
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
     }
+  }
 })
 router.beforeEach(() => {
-    NProgress.start()
+  NProgress.start()
 })
 
 router.afterEach(() => {
-    NProgress.done()
+  NProgress.done()
 });
 
 export default router;

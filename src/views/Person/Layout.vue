@@ -1,10 +1,10 @@
 <template>
-  <div v-if="event">
+  <div v-if="GStore.event">
     <div class="title">
       <h2>{{ title }}</h2>
       <div class="q-pa-md nav flex flex-center">
         <q-item id="nav-btn" class="q-gutter-md">
-          <router-link :to="{ name: 'PersonDetails', params: { id } }">
+          <router-link :to="{ name: 'PersonDetails', params: { id: GStore.event.id  } }">
             <q-item clickable v-ripple id="nav-content">
               <q-section>
                 <span class="material-icons-outlined"> account_circle </span>
@@ -13,7 +13,7 @@
             </q-item>
           </router-link>
 
-          <router-link :to="{ name: 'VaccineDetails', params: { id } }">
+          <router-link :to="{ name: 'VaccineDetails', params: { id: GStore.event.id  } }">
             <q-item clickable v-ripple id="nav-content">
               <q-section>
                 <q-icon name="vaccines" />
@@ -22,7 +22,7 @@
             </q-item>
           </router-link>
 
-          <router-link :to="{ name: 'DoctorDetails', params: { id } }">
+          <router-link :to="{ name: 'DoctorDetails', params: { id: GStore.event.id  } }">
             <q-item clickable v-ripple id="nav-content">
               <q-section>
                 <span class="material-icons-outlined"> reviews </span>
@@ -32,22 +32,21 @@
           </router-link>
         </q-item>
       </div>
-      <router-view :event="event" />
+      <router-view :event="GStore.event" />
     </div>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
-import PersonService from "@/services/PersonService.js";
 
 export default {
-  props: ["id"],
-  data() {
-    return {
-      event: null,
-      isActive: true,
-    };
+  inject: ["GStore"],
+  props: {
+    event: {
+      type: Object,
+      required: true,
+    },
   },
   computed: {
     title() {
@@ -63,22 +62,6 @@ export default {
       }
       return title_name;
     },
-  },
-  created() {
-    PersonService.getPerson(this.id)
-      .then((response) => {
-        this.event = response.data;
-      })
-      .catch((error) => {
-        if (error.response && error.response.status == 404) {
-          this.$router.push({
-            name: "404Resource",
-            params: { resource: "person" },
-          });
-        } else {
-          return { name: "NetworkError" };
-        }
-      });
   },
   setup() {
     return {
