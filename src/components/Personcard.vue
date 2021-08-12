@@ -5,7 +5,7 @@
       :to="{ name: 'PersonDetails', params: { id: data.id } }"
     >
       <q-card class="my-card">
-        <img v-bind:src="data.picture" />
+        <img id="people-img" v-bind:src="data.picture" />
 
         <q-card-section>
           <div class="text-h4">Name: {{ data.name }} {{ data.surname }}</div>
@@ -17,21 +17,6 @@
     </router-link>
   </div>
 </template>
-
-<style>
-.my-card {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 10px !important;
-  color: #68b2a0 !important;
-  border-color: #68b2a0 !important;
-  text-align: center;
-}
-
-.event-link {
-  text-decoration: none;
-}
-</style>
 
 <script>
 export default {
@@ -54,3 +39,23 @@ export default {
   },
 };
 </script>
+
+<style>
+.my-card {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px !important;
+  color: #68b2a0 !important;
+  border-color: #68b2a0 !important;
+  text-align: center;
+}
+
+#people-img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.event-link {
+  text-decoration: none;
+}
+</style>

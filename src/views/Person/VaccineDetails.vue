@@ -23,19 +23,30 @@
           v-for="vaccine in event.vaccine"
           :key="vaccine.id"
         >
-          <q-card-section class="text-left">
-            <p>
-              NAME: <span id="text-color">{{ vaccine.name }}</span>
-            </p>
-            <p>
-              DATE: <span id="text-color">{{ vaccine.date }}</span>
-            </p>
-            <p>
-              TIME: <span id="text-color">{{ vaccine.time }}</span>
-            </p>
-            <p>
-              PLACE: <span>{{ vaccine.place }}</span>
-            </p>
+          <q-card-section>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <q-card-section class="text-left">
+                  <p>
+                    NAME: <span id="text-color">{{ vaccine.name }}</span>
+                  </p>
+                  <p>
+                    DATE: <span id="text-color">{{ vaccine.date }}</span>
+                  </p>
+                  <p>
+                    TIME: <span id="text-color">{{ vaccine.time }}</span>
+                  </p>
+                  <p>
+                    PLACE: <span id="text-color">{{ vaccine.place }}</span>
+                  </p>
+                </q-card-section>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <q-card-section>
+                  <img :src="vaccine.images" id="vaccine-logo" />
+                </q-card-section>
+              </div>
+            </div>
           </q-card-section>
         </q-tab-panel>
 
@@ -44,19 +55,30 @@
           v-for="vaccine in separateVaccine"
           :key="vaccine.id"
         >
-          <q-card-section class="text-left">
-            <p>
-              NAME: <span id="text-color">{{ vaccine.name }}</span>
-            </p>
-            <p>
-              DATE: <span id="text-color">{{ vaccine.date }}</span>
-            </p>
-            <p>
-              TIME: <span id="text-color">{{ vaccine.time }}</span>
-            </p>
-            <p>
-              PLACE: <span>{{ vaccine.place }}</span>
-            </p>
+          <q-card-section>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <q-card-section class="text-left">
+                  <p>
+                    NAME: <span id="text-color">{{ vaccine.name }}</span>
+                  </p>
+                  <p>
+                    DATE: <span id="text-color">{{ vaccine.date }}</span>
+                  </p>
+                  <p>
+                    TIME: <span id="text-color">{{ vaccine.time }}</span>
+                  </p>
+                  <p>
+                    PLACE: <span id="text-color">{{ vaccine.place }}</span>
+                  </p>
+                </q-card-section>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <q-card-section>
+                  <img :src="vaccine.images" id="vaccine-logo" />
+                </q-card-section>
+              </div>
+            </div>
           </q-card-section>
         </q-tab-panel>
       </q-tab-panels>
@@ -100,6 +122,12 @@ export default {
 }
 #text-color {
   color: #2c6975;
+}
+#vaccine-logo {
+  width: 250px;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .q-tab__label {
   font-size: 25px !important;

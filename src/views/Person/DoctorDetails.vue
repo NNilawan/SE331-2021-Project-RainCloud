@@ -1,6 +1,5 @@
 <template>
     <div class="detail">
-        <h2>DOCTOR RECOMMENDATION</h2>
         <q-card-section class="q-pa-sm">
             <DoctorComment v-if="reviewsList.length" :reviews="reviewsList"/>
         </q-card-section>
