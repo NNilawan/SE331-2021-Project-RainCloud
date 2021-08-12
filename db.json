@@ -8,19 +8,27 @@
             "age": "16",
             "hometown": "Chiang Mai",
             "picture": "https://cmu.to/Fwpot",
+            "congenital_disease": "Diabetes mellitus",
+            "drug_allergy": "Not allergic to drugs",
+            "height": "180",
+            "weight": "70",
+            "temperature": "36.4",
             "vaccine": [{
                     "id": 1,
                     "name": "pFizer",
                     "date": "15/02/2021",
                     "time": "04:00 PM",
-                    "place": "Saint Louis Hospital"
+                    "place": "Saint Louis Hospital",
+                    "images": "https://cmu.to/zaLqE"
                 },
                 {
                     "id": 2,
                     "name": "pFizer",
                     "date": "15/03/2021",
                     "time": "06:00 AM",
-                    "place": "Saint Louis Hospital"
+                    "place": "Saint Louis Hospital",
+                    "images": "https://cmu.to/zaLqE"
+                    
                 }
             ],
             "__v": 0
@@ -34,12 +42,18 @@
             "age": "30",
             "hometown": "Khon Kaen",
             "picture": "https://cmu.to/GcNCs",
+            "congenital_disease": "heart disease",
+            "drug_allergy": "Penicillin , Ampicillin",
+            "height": "185",
+            "weight": "75",
+            "temperature": "35.6",
             "vaccine": [{
                 "id": 3,
                 "name": "Johnson & Johnson",
                 "date": "29/04/2021",
                 "time": "09:00 AM",
-                "place": "Mahaesak Hospital"
+                "place": "Mahaesak Hospital",
+                "images": "https://cmu.to/3maY1"
             }],
             "__v": 0
         },
@@ -52,12 +66,18 @@
             "age": "25",
             "hometown": "Chiang Rai",
             "picture": "https://cmu.to/mOcqn",
+            "congenital_disease": "Diabetes mellitus",
+            "drug_allergy": "Streptomycin , Ampicillin",
+            "height": "168",
+            "weight": "50",
+            "temperature": "36.3",
             "vaccine": [{
                 "id": 4,
                 "name": "Sputnik V",
                 "date": "15/02/2021",
                 "time": "07:00 AM",
-                "place": "Mahaesak Hospital"
+                "place": "Mahaesak Hospital",
+                "images": "https://cmu.to/GK5jj"
             }],
             "__v": 0
         },
@@ -70,19 +90,26 @@
             "age": "23",
             "hometown": "Bangkok",
             "picture": "https://cmu.to/KTdEj",
+            "congenital_disease": "Diabetes mellitus",
+            "drug_allergy": "Ampicillin",
+            "height": "176",
+            "weight": "73",
+            "temperature": "36.1",
             "vaccine": [{
                     "id": 5,
                     "name": "Sinopharm",
                     "date": "15/02/2021",
                     "time": "05:00 PM",
-                    "place": "Samitivej Hospital in Thonburi"
+                    "place": "Samitivej Hospital in Thonburi",
+                    "images": "https://cmu.to/Y5wzy"
                 },
                 {
                     "id": 6,
                     "name": "Sinopharm",
                     "date": "15/03/2021",
                     "time": "01:00 PM",
-                    "place": "Samitivej Hospital in Thonburi"
+                    "place": "Samitivej Hospital in Thonburi",
+                    "images": "https://cmu.to/Y5wzy"
                 }
             ],
             "__v": 0
@@ -96,12 +123,18 @@
             "age": "22",
             "hometown": "Tak",
             "picture": "https://cmu.to/OtnPW",
+            "congenital_disease": "renal artery stenosis",
+            "drug_allergy": "Penicillin , Ampicillin",
+            "height": "186",
+            "weight": "55",
+            "temperature": "35.8",
             "vaccine": [{
                 "id": 7,
                 "name": "pFizer",
                 "date": "10/02/2021",
                 "time": "03:00 PM",
-                "place": "Charoenkrung Pracharak Hospital"
+                "place": "Charoenkrung Pracharak Hospital",
+                "images": "https://cmu.to/zaLqE"
             }],
             "__v": 0
         },
@@ -114,12 +147,18 @@
             "age": "24",
             "hometown": "Phichit",
             "picture": "https://cmu.to/h0ZFY",
+            "congenital_disease": "Diabetes mellitus",
+            "drug_allergy": "Aspirin",
+            "height": "174",
+            "weight": "59",
+            "temperature": "37.4",
             "vaccine": [{
                 "id": 8,
                 "name": "Moderna",
                 "date": "30/06/2021",
                 "time": "11:00 AM",
-                "place": "Samitivej Hospital in Thonburi"
+                "place": "Samitivej Hospital in Thonburi",
+                "images": "https://cmu.to/DSpNa"
             }],
             "__v": 0
         },
@@ -132,19 +171,26 @@
             "age": "28",
             "hometown": "Chiang Rai",
             "picture": "https://cmu.to/JQyud",
+            "congenital_disease": "renal artery stenosis",
+            "drug_allergy": "Penicillin",
+            "height": "164",
+            "weight": "45",
+            "temperature": "36.8",
             "vaccine": [{
                     "id": 9,
                     "name": "pFizer",
                     "date": "31/05/2021",
                     "time": "04:00 PM",
-                    "place": "Taksin Hospital"
+                    "place": "Taksin Hospital",
+                    "images": "https://cmu.to/zaLqE"
                 },
                 {
                     "id": 10,
                     "name": "pFizer",
                     "date": "31/06/2021",
                     "time": "11:00 AM",
-                    "place": "Taksin Hospital"
+                    "place": "Taksin Hospital",
+                    "images": "https://cmu.to/zaLqE"
                 }
             ],
             "__v": 0
@@ -158,19 +204,26 @@
             "age": "29",
             "hometown": "Chiang Mai",
             "picture": "https://cmu.to/52-Gd",
+            "congenital_disease": "renal artery stenosis",
+            "drug_allergy": "Not allergic to drugs",
+            "height": "178",
+            "weight": "69",
+            "temperature": "37.2",
             "vaccine": [{
                     "id": 11,
                     "name": "AstraZeneca",
                     "date": "04/03/2021",
                     "time": "02:00 PM",
-                    "place": "Samitivej Chinatown Hospital"
+                    "place": "Samitivej Chinatown Hospital",
+                    "images": "https://cmu.to/gWiyN"
                 },
                 {
                     "id": 12,
                     "name": "AstraZeneca",
                     "date": "04/04/2021",
                     "time": "10:00 AM",
-                    "place": "Samitivej Chinatown Hospital"
+                    "place": "Samitivej Chinatown Hospital",
+                    "images": "https://cmu.to/gWiyN"
                 }
             ],
             "__v": 0
@@ -184,12 +237,18 @@
             "age": "16",
             "hometown": "Chiang Mai",
             "picture": "https://cmu.to/-gRA1",
+            "congenital_disease": "Allergy",
+            "drug_allergy": "Not allergic to drugs",
+            "height": "185",
+            "weight": "76",
+            "temperature": "36.4",
             "vaccine": [{
                 "id": 13,
                 "name": "pFizer",
                 "date": "25/02/2021",
                 "time": "11:00 AM",
-                "place": "Taksin Hospital"
+                "place": "Taksin Hospital",
+                "images": "https://cmu.to/zaLqE"
             }],
             "__v": 0
         },
@@ -202,12 +261,18 @@
             "age": "16",
             "hometown": "Phayao",
             "picture": "https://cmu.to/4qXr1",
+            "congenital_disease": "No underlying disease",
+            "drug_allergy": "Streptomycin , Ampicillin",
+            "height": "165",
+            "weight": "48",
+            "temperature": "35.7",
             "vaccine": [{
                 "id": 14,
                 "name": "pFizer",
                 "date": "26/01/2021",
                 "time": "01:00 PM",
-                "place": "Samitivej Chinatown Hospital"
+                "place": "Samitivej Chinatown Hospital",
+                "images": "https://cmu.to/zaLqE"
             }],
             "__v": 0
         },
@@ -220,12 +285,18 @@
             "age": "19",
             "hometown": "Ratchaburi",
             "picture": "https://cmu.to/WR3hF",
+            "congenital_disease": "heart disease",
+            "drug_allergy": "Not allergic to drugs",
+            "height": "155",
+            "weight": "40",
+            "temperature": "35.9",
             "vaccine": [{
                 "id": 15,
                 "name": "Moderna",
                 "date": "12/01/2021",
                 "time": "02:00 PM",
-                "place": "BNH Hospital"
+                "place": "BNH Hospital",
+                "images": "https://cmu.to/DSpNa"
             }],
             "__v": 0
         },
@@ -238,19 +309,26 @@
             "age": "29",
             "hometown": "Chai Nat",
             "picture": "https://cmu.to/S03uo",
+            "congenital_disease": "Leukemia",
+            "drug_allergy": "Aspirin",
+            "height": "180",
+            "weight": "75",
+            "temperature": "36.7",
             "vaccine": [{
                     "id": 16,
                     "name": "Sinopharm",
                     "date": "13/01/2021",
                     "time": "02:00 PM",
-                    "place": "Mahaesak Hospital"
+                    "place": "Mahaesak Hospital",
+                    "images": "https://cmu.to/Y5wzy"
                 },
                 {
                     "id": 17,
                     "name": "Sinopharm",
                     "date": "13/02/2021",
                     "time": "09:00 AM",
-                    "place": "Mahaesak Hospital"
+                    "place": "Mahaesak Hospital",
+                    "images": "https://cmu.to/Y5wzy"
                 }
             ],
             "__v": 0
@@ -264,19 +342,26 @@
             "age": "23",
             "hometown": "Bangkok",
             "picture": "https://cmu.to/qbQlQ",
+            "congenital_disease": "Leukemia",
+            "drug_allergy": "Not allergic to drugs",
+            "height": "182",
+            "weight": "65",
+            "temperature": "36.8",
             "vaccine": [{
                     "id": 18,
                     "name": "Moderna",
                     "date": "10/07/2021",
                     "time": "09:00 AM",
-                    "place": "Saint Louis Hospital"
+                    "place": "Saint Louis Hospital",
+                    "images": "https://cmu.to/DSpNa"
                 },
                 {
                     "id": 19,
                     "name": "Moderna",
                     "date": "12/08/2021",
                     "time": "08:00 AM",
-                    "place": "Saint Louis Hospital"
+                    "place": "Saint Louis Hospital",
+                    "images": "https://cmu.to/DSpNa"
                 }
             ],
             "__v": 0
@@ -290,19 +375,26 @@
             "age": "31",
             "hometown": "Chanthaburi",
             "picture": "https://cmu.to/rJKca",
+            "congenital_disease": "No underlying disease",
+            "drug_allergy": "Aspirin",
+            "height": "168",
+            "weight": "74",
+            "temperature": "35.7",
             "vaccine": [{
                     "id": 20,
                     "name": "AstraZeneca ",
                     "date": "09/06/2021",
                     "time": "07:00 AM",
-                    "place": "BNH Hospital"
+                    "place": "BNH Hospital",
+                    "images": "https://cmu.to/gWiyN"
                 },
                 {
                     "id": 21,
                     "name": "AstraZeneca ",
                     "date": "10/07/2021",
                     "time": "07:00 AM",
-                    "place": "BNH Hospital"
+                    "place": "BNH Hospital",
+                    "images": "https://cmu.to/gWiyN"
                 }
             ],
             "__v": 0
@@ -316,19 +408,26 @@
             "age": "44",
             "hometown": "Yala",
             "picture": "https://cmu.to/I4Zo7",
+            "congenital_disease": "No underlying disease",
+            "drug_allergy": "Not allergic to drugs",
+            "height": "186",
+            "weight": "73",
+            "temperature": "36.6",
             "vaccine": [{
                     "id": 22,
                     "name": "Sputnik V",
                     "date": "05/03/2021",
                     "time": "02:00 PM",
-                    "place": "Charoenkrung Pracharak Hospital"
+                    "place": "Charoenkrung Pracharak Hospital",
+                    "images": "https://cmu.to/GK5jj"
                 },
                 {
                     "id": 23,
                     "name": "Sputnik V",
                     "date": "01/04/2021",
                     "time": "04:00 PM",
-                    "place": "Charoenkrung Pracharak Hospital"
+                    "place": "Charoenkrung Pracharak Hospital",
+                    "images": "https://cmu.to/GK5jj"
                 }
             ],
             "__v": 0
