@@ -66,11 +66,13 @@ export default {
       this.question = "";
     },
     flashMessage() {
-      this.GStore.flashMessage = "You comment already";
-      setTimeout(() => {
-        //After 5 seconds remove it
-        this.GStore.flashMessage = "";
-      }, 5000);
+      if (this.name != "" && this.question != "") {
+        this.GStore.flashMessage = "You comment already";
+        setTimeout(() => {
+          //After 5 seconds remove it
+          this.GStore.flashMessage = "";
+        }, 5000);
+      }
     },
   },
 };
