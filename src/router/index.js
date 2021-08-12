@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import PersonList from '../views/PersonList.vue'
 import Layout from '../views/Person/Layout.vue'
+import VaccineDetails from '../views/Person/VaccineDetails.vue'
 import PersonDetails from '../views/Person/PersonDetails.vue'
 
 const routes = [{
@@ -34,13 +35,13 @@ const routes = [{
       name: 'VaccineDetails',
       props: true,
       component: VaccineDetails
-    },
+    },/*
     {
       path: '/datas/:id/doctor-recommendation',
       name: 'DoctorRecommendation',
       props: true,
       component: DoctorRecommendation
-    }
+    } */
   ]
 }
 ]
