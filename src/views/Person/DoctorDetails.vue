@@ -1,6 +1,5 @@
 <template>
     <div class="detail">
-        <h2>DOCTOR RECOMMENDATION</h2>
         <q-card-section class="q-pa-sm">
             <DoctorComment v-if="reviewsList.length" :reviews="reviewsList"/>
         </q-card-section>
@@ -45,7 +44,7 @@ export default {
                 this.GStore.comment[this.id] = this.reviews
             }else{
                 this.GStore.comment[this.id].push(review)
-                this.reviews = (this.GStore.comment[this.id])
+                // this.reviews = (this.GStore.comment[this.id])
             }
           
         }

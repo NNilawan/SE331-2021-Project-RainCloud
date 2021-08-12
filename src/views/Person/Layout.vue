@@ -22,14 +22,14 @@
             </q-item>
           </router-link>
 
-          <!-- <router-link :to="{ name: 'DoctorRecommendation', params: { id } }"> -->
+          <router-link :to="{ name: 'DoctorDetails', params: { id } }">
             <q-item clickable v-ripple id="nav-content">
               <q-section>
                 <span class="material-icons-outlined"> reviews </span>
                 Doctor Recommendation
               </q-section>
             </q-item>
-          <!-- </router-link> -->
+          </router-link>
         </q-item>
       </div>
       <router-view :event="event" />
@@ -58,7 +58,7 @@ export default {
       if (this.$route.name == "VaccineDetails") {
         title_name = "VACCINE DETAILS";
       }
-      if (this.$route.name == "DoctorRecommendation") {
+      if (this.$route.name == "DoctorDetails") {
         title_name = "DOCTOR RECOMMENDATION";
       }
       return title_name;
