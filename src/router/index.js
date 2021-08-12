@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import PersonList from '../views/PersonList.vue'
 import Layout from '../views/Person/Layout.vue'
 import PersonDetails from '../views/Person/PersonDetails.vue'
+import VaccineDetails from '../views/Person/VaccineDetails.vue'
 import DoctorDetails from '../views/Person/DoctorDetails.vue'
 import NProgress from 'nprogress'
 import NotFound from '@/views/NotFound.vue'
@@ -38,7 +39,7 @@ const routes = [{
         if (error.response && error.response.status == 404) {
           return {
             name: '404Resource',
-            params: { resource: 'Person' }
+            params: { resource: 'person' }
           }
         } else {
           return { name: 'NetworkError' }
@@ -47,13 +48,9 @@ const routes = [{
   },
   children: [
     {
-        path: "/about",
-        name: "About",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import ( /* webpackChunkName: "about" */ "../views/About.vue"),
+      path: '',
+      name: "PersonDetails",
+      component: PersonDetails,
     },
     {
       path: '/datas/:id/vaccine-details',
