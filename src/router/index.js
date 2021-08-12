@@ -38,7 +38,7 @@ const routes = [{
         if (error.response && error.response.status == 404) {
           return {
             name: '404Resource',
-            params: { resource: 'person' }
+            params: { resource: 'Person' }
           }
         } else {
           return { name: 'NetworkError' }
