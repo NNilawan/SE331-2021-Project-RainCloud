@@ -1,14 +1,12 @@
-
 <template>
     <div class="detail">
         <h2>DOCTOR RECOMMENDATION</h2>
-        <div class="review-container">
-            <h3>Recommendation:</h3>
-            <DoctorComment v-if="reviews.length" :reviews="reviews"/>
-        </div>
-        <div> 
+        <q-card-section class="q-pa-sm">
+            <DoctorComment v-if="reviewsList.length" :reviews="reviewsList"/>
+        </q-card-section>
+        <q-card-section class="q-pa-sm"> 
             <DoctorForm @review-submitted="addReview"/>
-        </div>
+        </q-card-section>
     </div>
 </template> 
 
@@ -16,6 +14,8 @@
 import DoctorForm from "@/components/DoctorForm.vue";
 import DoctorComment from "@/components/DoctorComment.vue";
 export default {
+    props: ["id"],
+    inject: ['GStore'],
     components: {
         DoctorForm,
         DoctorComment,
@@ -27,9 +27,27 @@ export default {
             reviews: [],
         }
     },
+    computed: {
+        reviewsList: function () {
+            var list = []
+            if(this.GStore.comment[this.id] != null){
+                list = this.GStore.comment[this.id]
+                return list
+            }
+            return list
+        }
+    },
     methods: {
         addReview(review) {
-            this.reviews.push(review)
+            
+            if(this.GStore.comment[this.id] == null){
+                this.reviews.push(review)
+                this.GStore.comment[this.id] = this.reviews
+            }else{
+                this.GStore.comment[this.id].push(review)
+                this.reviews = (this.GStore.comment[this.id])
+            }
+          
         }
     }
 }

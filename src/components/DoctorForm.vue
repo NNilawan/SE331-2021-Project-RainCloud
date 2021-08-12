@@ -1,65 +1,80 @@
 <template>
+  <form class="review-form" @submit.prevent="onSubmit">
+    <q-card-section class="text-left textbox">
+      <q-input
+        for="name"
+        id="name"
+        v-model="name"
+        class="text-h5"
+        standout="bg-teal text-white"
+        label="Doctor Name:"
+      />
+      <br />
 
-    <review-form @review-submitted="addReview">
-        <form class="review-form" @submit.prevent="onSubmit">
-            <div>
-                <label for="name"> Doctor Name: </label>
-                <br />
-                <input id="name" v-model="name" />
-                <br />
-                <label for="question"> Doctor would like to comment that:</label>
-                <br />
-                <textarea id="question" v-model="question"></textarea>
-                <br />
-                <input class="button" type="submit" value="Submit" />
-            </div>
-        </form>
-    </review-form>
+      <q-input
+        for="question"
+        id="question"
+        v-model="question"
+        class="text-h5"
+        standout="bg-teal text-white"
+        label=" Doctor would like to comment that:"
+        filled
+        autogrow
+      />
+      <br />
+       <div class="row">
+          <q-space />
+          <q-btn 
+            type="submit"
+            value="Submit"
+            outline
+            rounded
+            color="teal-7"
+            label="Submit"
+          />
+        </div>
+    </q-card-section>
+  </form>
 </template> 
 
 <script>
-
 export default {
-     data() {
-        return {
-            name: '',
-            question: '',
-            time: '',
-
-        }
+  data() {
+    return {
+      name: "",
+      question: "",
+      time: "",
+    };
+  },
+  methods: {
+    onSubmit() {
+      if (this.name === "" || this.question === "") {
+        alert("Recommend is incomplete. Please fill out every field");
+        return;
+      }
+      var today = new Date();
+      var time = today.toLocaleTimeString();
+      let doctorRecommmend = {
+        name: this.name,
+        question: this.question,
+        time: time,
+      };
+      this.$emit("review-submitted", doctorRecommmend);
+      this.name = "";
+      this.question = "";
     },
-    methods: {
-        onSubmit() {
-            if (this.name === '' || this.question === '') {
-                alert('Recommend is incomplete. Please fill out every field')
-                return
-            }
-            var today = new Date();
-            var time = today.toLocaleTimeString();
-            let doctorRecommmend = {
-                name: this.name,
-                question: this.question,
-                time: time,
-            }
-            this.$emit('review-submitted', doctorRecommmend)
-            this.name = ''
-            this.question = ''
-        }
-    }
-}
+  },
+};
 </script>
 
 <style>
-.review-form {
-  display: flex;
-  flex-direction: column;
-  width: 425px;
-  padding: 20px;
-  margin: 40px;
-  border: 2px solid #d8d8d8;
-  background-color: white;
-  -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
-  box-shadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
+
+.textbox {
+  border-radius: 10px !important;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #68b2a0;
+  margin: auto;
 }
 </style>
+
