@@ -17,7 +17,7 @@ import DoctorForm from "@/components/DoctorForm.vue";
 import DoctorComment from "@/components/DoctorComment.vue";
 
 export default {
-  props: ["event"],
+  props: ["id"],
   inject: ["GStore"],
   components: {
     DoctorForm,
