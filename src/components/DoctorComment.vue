@@ -41,7 +41,7 @@ export default {
   background-color:#bae0d6;
 }
 .o {
-  overflow: auto;
-  /* word-wrap: break-word */
+  /* overflow: auto; */
+  word-wrap: break-word
 }
 </style>
