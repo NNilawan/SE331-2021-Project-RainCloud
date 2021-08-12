@@ -47,7 +47,7 @@ export default {
         this.GStore.comment[this.id] = this.reviews;
       } else {
         this.GStore.comment[this.id].push(review);
-        this.reviews = this.GStore.comment[this.id];
+        // this.reviews = this.GStore.comment[this.id];
       }
     },
   },
