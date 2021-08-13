@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SE331_PROJECT_RAINCLOUD }}'
-          projectId: se331-project-raincloud
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SE331_PROJECT_1D6D5 }}'
+          projectId: se331-project-1d6d5
