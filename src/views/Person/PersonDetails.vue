@@ -20,15 +20,6 @@
           {{ event.congenital_disease }}
         </div>
         <div class="text-h6">
-          <span class="title">DRUG ALLERGY:</span> {{ event.drug_allergy }}
-        </div>
-        <div class="text-h6">
-          <span class="title">HEIGHT:</span> {{ event.height }} CM.
-        </div>
-        <div class="text-h6">
-          <span class="title">WEIGHT:</span> {{ event.weight }} KG.
-        </div>
-        <div class="text-h6">
           <span class="title">TEMPERATURE:</span> {{ event.temperature }} °C
         </div>
         <div class="text-h6">
