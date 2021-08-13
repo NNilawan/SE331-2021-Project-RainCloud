@@ -9,9 +9,6 @@
             "hometown": "Chiang Mai",
             "picture": "https://cmu.to/Fwpot",
             "congenital_disease": "Diabetes mellitus",
-            "drug_allergy": "Not allergic to drugs",
-            "height": "180",
-            "weight": "70",
             "temperature": "36.4",
             "vaccine": [{
                     "id": 1,
@@ -43,9 +40,6 @@
             "hometown": "Khon Kaen",
             "picture": "https://cmu.to/GcNCs",
             "congenital_disease": "heart disease",
-            "drug_allergy": "Penicillin , Ampicillin",
-            "height": "185",
-            "weight": "75",
             "temperature": "35.6",
             "vaccine": [{
                 "id": 3,
@@ -67,9 +61,6 @@
             "hometown": "Chiang Rai",
             "picture": "https://cmu.to/mOcqn",
             "congenital_disease": "Diabetes mellitus",
-            "drug_allergy": "Streptomycin , Ampicillin",
-            "height": "168",
-            "weight": "50",
             "temperature": "36.3",
             "vaccine": [{
                 "id": 4,
@@ -91,9 +82,6 @@
             "hometown": "Bangkok",
             "picture": "https://cmu.to/KTdEj",
             "congenital_disease": "Diabetes mellitus",
-            "drug_allergy": "Ampicillin",
-            "height": "176",
-            "weight": "73",
             "temperature": "36.1",
             "vaccine": [{
                     "id": 5,
@@ -124,9 +112,6 @@
             "hometown": "Tak",
             "picture": "https://cmu.to/OtnPW",
             "congenital_disease": "renal artery stenosis",
-            "drug_allergy": "Penicillin , Ampicillin",
-            "height": "186",
-            "weight": "55",
             "temperature": "35.8",
             "vaccine": [{
                 "id": 7,
@@ -148,9 +133,6 @@
             "hometown": "Phichit",
             "picture": "https://cmu.to/h0ZFY",
             "congenital_disease": "Diabetes mellitus",
-            "drug_allergy": "Aspirin",
-            "height": "174",
-            "weight": "59",
             "temperature": "37.4",
             "vaccine": [{
                 "id": 8,
@@ -171,10 +153,7 @@
             "age": "28",
             "hometown": "Chiang Rai",
             "picture": "https://cmu.to/JQyud",
-            "congenital_disease": "renal artery stenosis",
-            "drug_allergy": "Penicillin",
-            "height": "164",
-            "weight": "45",
+            "congenital_disease": "-",
             "temperature": "36.8",
             "vaccine": [{
                     "id": 9,
@@ -204,10 +183,7 @@
             "age": "29",
             "hometown": "Chiang Mai",
             "picture": "https://cmu.to/52-Gd",
-            "congenital_disease": "renal artery stenosis",
-            "drug_allergy": "Not allergic to drugs",
-            "height": "178",
-            "weight": "69",
+            "congenital_disease": "-",
             "temperature": "37.2",
             "vaccine": [{
                     "id": 11,
@@ -237,10 +213,7 @@
             "age": "16",
             "hometown": "Chiang Mai",
             "picture": "https://cmu.to/-gRA1",
-            "congenital_disease": "Allergy",
-            "drug_allergy": "Not allergic to drugs",
-            "height": "185",
-            "weight": "76",
+            "congenital_disease": "-",
             "temperature": "36.4",
             "vaccine": [{
                 "id": 13,
@@ -262,9 +235,6 @@
             "hometown": "Phayao",
             "picture": "https://cmu.to/4qXr1",
             "congenital_disease": "No underlying disease",
-            "drug_allergy": "Streptomycin , Ampicillin",
-            "height": "165",
-            "weight": "48",
             "temperature": "35.7",
             "vaccine": [{
                 "id": 14,
@@ -285,10 +255,7 @@
             "age": "19",
             "hometown": "Ratchaburi",
             "picture": "https://cmu.to/WR3hF",
-            "congenital_disease": "heart disease",
-            "drug_allergy": "Not allergic to drugs",
-            "height": "155",
-            "weight": "40",
+            "congenital_disease": "-",
             "temperature": "35.9",
             "vaccine": [{
                 "id": 15,
@@ -310,9 +277,6 @@
             "hometown": "Chai Nat",
             "picture": "https://cmu.to/S03uo",
             "congenital_disease": "Leukemia",
-            "drug_allergy": "Aspirin",
-            "height": "180",
-            "weight": "75",
             "temperature": "36.7",
             "vaccine": [{
                     "id": 16,
@@ -329,105 +293,6 @@
                     "time": "09:00 AM",
                     "place": "Mahaesak Hospital",
                     "images": "https://cmu.to/Y5wzy"
-                }
-            ],
-            "__v": 0
-        },
-        {
-            "id": 13,
-            "name": "Mike",
-            "surname": "Alexander",
-            "status_does1": true,
-            "status_does2": true,
-            "age": "23",
-            "hometown": "Bangkok",
-            "picture": "https://cmu.to/qbQlQ",
-            "congenital_disease": "Leukemia",
-            "drug_allergy": "Not allergic to drugs",
-            "height": "182",
-            "weight": "65",
-            "temperature": "36.8",
-            "vaccine": [{
-                    "id": 18,
-                    "name": "Moderna",
-                    "date": "10/07/2021",
-                    "time": "09:00 AM",
-                    "place": "Saint Louis Hospital",
-                    "images": "https://cmu.to/DSpNa"
-                },
-                {
-                    "id": 19,
-                    "name": "Moderna",
-                    "date": "12/08/2021",
-                    "time": "08:00 AM",
-                    "place": "Saint Louis Hospital",
-                    "images": "https://cmu.to/DSpNa"
-                }
-            ],
-            "__v": 0
-        },
-        {
-            "id": 14,
-            "name": "November",
-            "surname": "Scarlett",
-            "status_does1": true,
-            "status_does2": true,
-            "age": "31",
-            "hometown": "Chanthaburi",
-            "picture": "https://cmu.to/rJKca",
-            "congenital_disease": "No underlying disease",
-            "drug_allergy": "Aspirin",
-            "height": "168",
-            "weight": "74",
-            "temperature": "35.7",
-            "vaccine": [{
-                    "id": 20,
-                    "name": "AstraZeneca ",
-                    "date": "09/06/2021",
-                    "time": "07:00 AM",
-                    "place": "BNH Hospital",
-                    "images": "https://cmu.to/gWiyN"
-                },
-                {
-                    "id": 21,
-                    "name": "AstraZeneca ",
-                    "date": "10/07/2021",
-                    "time": "07:00 AM",
-                    "place": "BNH Hospital",
-                    "images": "https://cmu.to/gWiyN"
-                }
-            ],
-            "__v": 0
-        },
-        {
-            "id": 15,
-            "name": "Oscar",
-            "surname": "Lucas",
-            "status_does1": true,
-            "status_does2": true,
-            "age": "44",
-            "hometown": "Yala",
-            "picture": "https://cmu.to/I4Zo7",
-            "congenital_disease": "No underlying disease",
-            "drug_allergy": "Not allergic to drugs",
-            "height": "186",
-            "weight": "73",
-            "temperature": "36.6",
-            "vaccine": [{
-                    "id": 22,
-                    "name": "Sputnik V",
-                    "date": "05/03/2021",
-                    "time": "02:00 PM",
-                    "place": "Charoenkrung Pracharak Hospital",
-                    "images": "https://cmu.to/GK5jj"
-                },
-                {
-                    "id": 23,
-                    "name": "Sputnik V",
-                    "date": "01/04/2021",
-                    "time": "04:00 PM",
-                    "place": "Charoenkrung Pracharak Hospital",
-                    "images": "https://cmu.to/GK5jj"
                 }
             ],
             "__v": 0
