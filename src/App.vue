@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md content">
+  <div class="q-pa-md">
      <q-layout view="lHh Lpr lff">
       <q-header elevated id="sidebar">
         <q-toolbar>
@@ -72,9 +72,6 @@ export default {
 </script>
 
 <style>
-.content {
-  font-family: "DB Adman X";
-}
 #sidebar {
   background-color:#67b39f  ;
   font-size: 23px;
